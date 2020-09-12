@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HypeGirl</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="rounded" id="mainBox">
+            <h1>Hype<span>Girl</span></h1>
+            <h2>A short but sweet newsletter every Sunday!</h2>
+            <input id="input" placeholder="Email"/>
+            <button id="submit">Submit!</button>
+        </div>
+
+
+
+        <div class="rounded" id="whyBox">
+
+        </div>
+
+    </div>
+</body>
+</html>
+
+<script>
+    let submitButton = document.getElementById('submit')
+    let inputField = document.getElementById('input')
+
+    submitButton.onclick = (event) => {
+        let email = inputField.value
+        if (email) {
+          console.log("YEEEE")
+        } else {
+          console.log("NOOOOO!")
+        }
+
+    }
+
+
+</script>
