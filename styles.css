@@ -102,7 +102,11 @@ input {
 }
 
 input::placeholder {
-    color: white;
+    color: #a4a4a4;
+}
+
+input:focus {
+    border-color: white;
 }
 
 button {
@@ -112,6 +116,11 @@ button {
     font-size: 16px;
     outline: none;
     cursor: pointer;
+}
+
+button:hover {
+    background: rgb(255, 60, 105);
+
 }
 
 div h1 span {
@@ -126,6 +135,12 @@ div#whyBox {
     top: -89px;
     left: 392px;
     z-index: -1;
+    transition: all 0.3s ease-in-out;
+}
+
+div#whyBox:hover {
+    top: -100px;
+    left: 410px;
 }
 
 #whyBox h1 {
@@ -148,4 +163,14 @@ div.rounded {
     padding: 27px;
     color: white;
     font-family: "Open Sans", serif;
+}
+
+p.message {
+    color: #FF006A;
+    font-weight: bold;
+    position: relative;
+    top: 30px;
+    text-align: center;
+    display: none;
+    width: 100%;
 }

@@ -28,6 +28,8 @@
             <h2>A short but sweet newsletter every Sunday!</h2>
             <input id="input" placeholder="Email" name="email"/>
             <button id="submit">Submit!</button>
+            <p class="message" id="successMessage">You are one of us now! Thanks for submitting :)</p>
+            <p class="message" id="errorMessage">Email entered is not valid...try again!</p>
         </div>
 
 
@@ -45,36 +47,74 @@
 </html>
 
 <script>
-    function validateEmail(email) {
-        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(String(email).toLowerCase());
-    }
-
-    let submitButton = document.getElementById('submit')
-    let inputField = document.getElementById('input')
+    let submitButton = document.getElementById('submit');
+    let inputField = document.getElementById('input');
+    let successMessage = document.getElementById('successMessage');
+    let errorMessage = document.getElementById('errorMessage');
 
 
     // var $form = $('form#test-form');
     var url = 'https://script.google.com/macros/s/AKfycbxJ-ZR4oLVY9VQSKevX6lIHvXJyPYmiaFUIlRJiIuE0l3ZJMh0R/exec';
 
     submitButton.onclick = (event) => {
-        let email = inputField.value
+        let email = inputField.value;
 
-        if (!validateEmail(email)) {
-            console.log("Email entered is invalid!!!")
-            return;
+        if (!email) {
+          hideErrorMessage();
+          hideSuccessMessage();
+        } else if (!validateEmail(email)) {
+          handleError(email);
+        } else {
+          sendEmailToSheets(email);
+          showSuccessMessageAndClearInput();
         }
+    }
 
-        var jqxhr = $.ajax({
-            url: url,
-            method: "GET",
-            dataType: "json",
-            data: {'Email': email}
-        }).success(
-            // do something
-        );
+    function validateEmail(email) {
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+    }
 
+    function sendEmailToSheets(email) {
+      $.ajax({
+        url: url,
+        method: "GET",
+        dataType: "json",
+        data: {'Email': email}
+      }).success();
 
+      console.log("Email sent! Thanks!")
+    }
+
+    function handleError(input) {
+      hideSuccessMessage();
+      showErrorMessage();
+    }
+
+    function showSuccessMessageAndClearInput() {
+      hideErrorMessage();
+      showSuccessMessage();
+      clearInput();
+    }
+
+    function showSuccessMessage() {
+      successMessage.style.display = 'inline-block';
+    }
+
+    function hideSuccessMessage() {
+      successMessage.style.display = 'none';
+    }
+
+    function clearInput() {
+      inputField.value = '';
+    }
+
+    function showErrorMessage() {
+      errorMessage.style.display = 'inline-block';
+    }
+
+    function hideErrorMessage() {
+      errorMessage.style.display = 'none';
     }
 
 
