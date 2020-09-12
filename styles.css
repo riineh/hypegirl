@@ -135,7 +135,8 @@ div#whyBox {
     top: -89px;
     left: 392px;
     z-index: -1;
-    transition: all 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
+    transform-origin: top left;
 }
 
 div#whyBox:hover {
