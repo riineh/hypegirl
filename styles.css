@@ -162,7 +162,7 @@ div.rounded {
     box-sizing: border-box;
     padding: 27px;
     color: white;
-    font-family: "Open Sans", serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 p.message {
