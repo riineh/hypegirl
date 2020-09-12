@@ -5,6 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
     <title>HypeGirl</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -14,13 +16,17 @@
         <div class="rounded" id="mainBox">
             <h1>Hype<span>Girl</span></h1>
             <h2>A short but sweet newsletter every Sunday!</h2>
-            <input id="input" placeholder="Email"/>
+            <input id="input" placeholder="Email" name="email"/>
             <button id="submit">Submit!</button>
         </div>
 
 
 
         <div class="rounded" id="whyBox">
+            <h1>Why?</h1>
+            <h2>Sometimes life gets hard ... or boring ... or both. And that’s why hearing about new interesting articles, skills to master and just rants about life is so important for keeping on track and living your best life.
+                <br>The HypeGirl newsletter is like talking to that one wise nerdy friend - you never know what you’re going to get but it’s never boring.
+            </h2>
 
         </div>
 
@@ -29,16 +35,35 @@
 </html>
 
 <script>
+    function validateEmail(email) {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+
     let submitButton = document.getElementById('submit')
     let inputField = document.getElementById('input')
 
+
+    // var $form = $('form#test-form');
+    var url = 'https://script.google.com/macros/s/AKfycbxJ-ZR4oLVY9VQSKevX6lIHvXJyPYmiaFUIlRJiIuE0l3ZJMh0R/exec';
+
     submitButton.onclick = (event) => {
         let email = inputField.value
-        if (email) {
-          console.log("YEEEE")
-        } else {
-          console.log("NOOOOO!")
+
+        if (!validateEmail(email)) {
+            console.log("aiaia")
+            return;
         }
+
+        var jqxhr = $.ajax({
+            url: url,
+            method: "GET",
+            dataType: "json",
+            data: {'Email': email}
+        }).success(
+            // do something
+        );
+
 
     }
 
