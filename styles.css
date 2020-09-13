@@ -72,6 +72,10 @@ div#mainBox {
     height: 247px;
 }
 
+div#mainBox img {
+    display: none;
+}
+
 #mainBox h1 {
     font-size: 40px;
 }
@@ -139,6 +143,10 @@ div#whyBox {
     transform-origin: top left;
 }
 
+div#mainBox img {
+    display: none;
+}
+
 div#whyBox:hover {
     top: -100px;
     left: 410px;
@@ -157,7 +165,11 @@ div#whyBox:hover {
     line-height: normal;
 }
 
-div.rounded {
+#extra-space {
+    display: none;
+}
+
+.container div {
     border-radius: 22px;
     position: absolute;
     box-sizing: border-box;
@@ -174,4 +186,88 @@ p.message {
     text-align: center;
     display: none;
     width: 100%;
+}
+
+
+/*MOBILE CODE*/
+
+@media all and (max-width: 1280px) {
+    body {
+        background: #FF006A;
+    }
+
+     div.container {
+         /*background: red;*/
+         width: 100%;
+         height: 100%;
+         /*height: auto;*/
+         /*position: relative;*/
+         /*margin: 0;*/
+         transform: none;
+         top: 0;
+         left: 0;
+         /*left: 0;*/
+     }
+
+    div#whyBox {
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+
+    div#whyBox:hover {
+        top: 0;
+        left: 0;
+    }
+
+    div#whyBox h1 {
+        margin: 40px 0;
+    }
+
+    div#whyBox h2 {
+        margin: 0;
+        text-align: center;
+    }
+
+    #extra-space {
+        display: block;
+    }
+
+
+    div#mainBox {
+        width: 100%;
+        height: auto;
+    }
+
+    div#mainBox h1, div#mainBox h2 {
+        text-align: center;
+    }
+
+    div#mainBox #input {
+        margin-top: 15px;
+    }
+
+    div#mainBox h2 {
+        margin-top: 50px;
+    }
+
+    div#mainBox img {
+        display: block;
+        width: 110px;
+        margin: 20px auto;
+    }
+
+    div.container div {
+        position: relative;
+        border-radius: 0;
+        /*display: block;*/
+    }
+
+    p.message {
+        top: 0;
+        margin-top: 15px;
+    }
 }
