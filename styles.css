@@ -48,226 +48,192 @@ table {
 
 
 
-
-
-
 body {
-    background: #F6F6F6;
-}
-
-div.container {
-    width: 462px;
-    height: 247px;
-    margin: 0 auto;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-div#mainBox {
     background: #001F30;
-    width: 462px;
-    height: 247px;
+    font-family: "Open Sans", sans-serif;
+    padding-top: 150px;
+    color: white;
 }
 
-div#mainBox img {
-    display: none;
+.logo {
+    width: 70px;
 }
 
-#mainBox h1 {
-    font-size: 40px;
+#mainArea {
+    margin: 0 auto;
+    padding: 0 20px 0 20px;
+    max-width: 650px;
 }
 
-#mainBox h2 {
-    text-align: right;
-    margin-top: 4px;
+#whyArea {
+    margin: 0 auto;
+    padding: 0 30px 0 30px;
+    max-width: 750px;
 }
 
-input, button {
-    box-sizing: border-box;
+#mainArea .logo {
     display: block;
+    margin: 0 auto;
+}
+
+#mainArea h1 {
+    font-size: 30px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#mainArea h1 span {
+    color: #FF1F62;
+    font-weight: bold;
+}
+
+#mainArea h2 {
+    text-align: center;
+    margin: 15px 0 30px 0;
+}
+
+.input-container {
     width: 100%;
-    height: 45px;
-    border-radius: 9px;
+    box-sizing: border-box;
+    height: 43px;
 }
 
 input {
-    border: 3px solid #FF006A;
-    margin-top: 35px;
-    margin-bottom: 15px;
-    outline: none;
+    width: 80%;
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
     background: black;
+    outline: none;
+    border: 2px solid #FF1F62;
     color: white;
-    padding: 0 20px;
-    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
     font-weight: bold;
+    padding-left: 20px;
+    display: block;
+    float: left;
+
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 input::placeholder {
-    color: #a4a4a4;
-}
-
-input:focus {
-    border-color: white;
+    color: white;
 }
 
 button {
-    border: none;
-    background: #FF006A;
-    color: white;
-    font-size: 16px;
+    display: block;
+    width: 20%;
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
     outline: none;
+    border: none;
+    background: #FF1F62;
+    color: white;
+    font-weight: bold;
     cursor: pointer;
+
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 button:hover {
-    background: rgb(255, 60, 105);
-
+    background: #ff4162;
 }
 
-div h1 span {
-    color: #FF006A;
-    font-weight: bold;
-}
-
-div#whyBox {
-    background: #FF006A;
-    width: 462px;
-    height: 279px;
-    top: -89px;
-    left: 392px;
-    z-index: -1;
-    transition:  0.3s ease-in-out;
-    transform-origin: top left;
-}
-
-div#mainBox img {
+.message {
     display: none;
-}
-
-div#whyBox:hover {
-    top: -100px;
-    left: 410px;
-}
-
-#whyBox h1 {
-    font-size: 40px;
-    font-weight: bold;
-}
-
-#whyBox h2 {
-    font-size: 14px;
-    text-align: left;
-    margin-top: 20px;
-    margin-left: 65px;
-    line-height: normal;
-}
-
-#extra-space {
-    display: none;
-}
-
-.container div {
-    border-radius: 22px;
-    position: absolute;
-    box-sizing: border-box;
-    padding: 27px;
-    color: white;
-    font-family: "Open Sans", sans-serif;
-}
-
-p.message {
-    color: #FF006A;
-    font-weight: bold;
-    position: relative;
-    top: 30px;
     text-align: center;
-    display: none;
+    margin-top: 15px;
+    color: #FF1F62;
+    font-weight: bold;
     width: 100%;
 }
 
 
-/*MOBILE CODE*/
+#whyArea {
+    margin-top: 100px;
+}
 
-@media all and (max-width: 1280px) {
+#whyArea h1 {
+    color: #FF1F62;
+    font-weight: bold;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#whyArea p {
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: normal;
+}
+
+#whyArea p:last-child {
+    margin-bottom: 100px;
+}
+
+/*!*MOBILE CODE*!*/
+
+@media all and (max-width: 450px) {
     body {
-        background: #FF006A;
+        background: #FF1F62;
+        padding-top: 0;
     }
 
-     div.container {
-         /*background: red;*/
-         width: 100%;
-         height: 100%;
-         /*height: auto;*/
-         /*position: relative;*/
-         /*margin: 0;*/
-         transform: none;
-         top: 0;
-         left: 0;
-         /*left: 0;*/
-     }
+    .logo {
+        width: 110px;
+    }
 
-    div#whyBox {
-        z-index: 1;
-        top: 0;
-        left: 0;
+    #mainArea {
+        background: #001F30;
+        padding-top: 40px;
+        padding-bottom: 30px;
+    }
+
+    #mainArea h1 {
+        font-size: 40px;
+        margin-top: 20px;
+    }
+
+    #mainArea h2 {
+        margin: 50px 0 20px 0;
+    }
+
+    input {
         width: 100%;
-        height: auto;
-        text-align: center;
+        height: 43px;
+        margin-bottom: 10px;
     }
 
-    div#whyBox:hover {
-        top: 0;
-        left: 0;
-    }
-
-    div#whyBox h1 {
-        margin: 40px 0;
-    }
-
-    div#whyBox h2 {
-        margin: 0;
-        text-align: center;
-    }
-
-    #extra-space {
-        display: block;
-    }
-
-
-    div#mainBox {
+    button {
         width: 100%;
+        height: 43px;
+        font-size: 16px;
+    }
+
+    input, button {
+        border-radius: 5px
+    }
+
+    .input-container {
         height: auto;
     }
 
-    div#mainBox h1, div#mainBox h2 {
-        text-align: center;
-    }
-
-    div#mainBox #input {
-        margin-top: 15px;
-    }
-
-    div#mainBox h2 {
+    #whyArea {
         margin-top: 50px;
     }
 
-    div#mainBox img {
-        display: block;
-        width: 110px;
-        margin: 20px auto;
-    }
-
-    div.container div {
-        position: relative;
-        border-radius: 0;
-        /*display: block;*/
-    }
-
-    p.message {
-        top: 0;
-        margin-top: 15px;
+    #whyArea h1 {
+        color: white;
     }
 }

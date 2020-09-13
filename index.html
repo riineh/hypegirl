@@ -30,25 +30,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <div id="mainArea">
+        <img class="logo" src="roosaHand.svg" alt="Logo">
 
-        <div id="mainBox">
-            <img src="roosaHand.svg" alt="Logo">
-
-            <h1>Hype<span>Girl</span></h1>
-            <h2>A short but sweet newsletter every Sunday!</h2>
-            <input id="input" placeholder="Email" name="email"/>
-            <button id="submit">Submit!</button>
-            <p class="message" id="successMessage">You are one of us now! Thanks for submitting :)</p>
-            <p class="message" id="errorMessage">Email entered is not valid...try again!</p>
+        <h1>Hype<span>Girl</span></h1>
+        <h2>A short but sweet newsletter every Sunday!</h2>
+        <div class="input-container">
+            <input id="input" placeholder="Email" name="email"/><button
+                id="submit">Submit!</button>
         </div>
+        <p class="message" id="successMessage">You are one of us now! Thanks for submitting :)</p>
+        <p class="message" id="errorMessage">Email entered is not valid...try again!</p>
+    </div>
 
-        <div id="whyBox">
-            <h1>Why?</h1>
-            <h2>Sometimes life gets hard ... or boring ... or both. And that’s why hearing about new interesting articles, skills to master and just rants about life is so important for keeping on track and living your best life.
-                <br><br id="extra-space">The HypeGirl newsletter is like talking to that one wise nerdy friend - you never know what you’re going to get but it’s never boring.
-            </h2>
-        </div>
+    <div id="whyArea">
+        <h1>Why?</h1>
+        <p>Sometimes life gets hard ... or boring ... or both. And that’s why hearing about new interesting articles, skills to master and just rants about life is so important for keeping on track and living your best life.</p>
+        <p>The HypeGirl newsletter is like talking to that one wise nerdy friend - you never know what you’re going to get but it’s never boring.</p>
 
     </div>
 </body>
