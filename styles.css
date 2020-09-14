@@ -171,7 +171,7 @@ button:hover {
 #whyArea h1 {
     color: #FF1F62;
     font-weight: bold;
-    font-size: 35px;
+    font-size: 30px;
     text-align: center;
     margin-bottom: 30px;
 }
@@ -238,5 +238,6 @@ button:hover {
 
     #whyArea h1 {
         color: white;
+        font-size: 35px;
     }
 }
