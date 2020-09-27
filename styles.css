@@ -193,6 +193,7 @@ a.pastIssues {
     text-align: center;
     width: 100%;
     display: inline-block;
+    margin-bottom: 50px;
 }
 
 /*!*MOBILE CODE*!*/
@@ -248,5 +249,9 @@ a.pastIssues {
     #whyArea h1 {
         color: white;
         font-size: 35px;
+    }
+
+    a.pastIssues {
+        color: #FFFFFF;
     }
 }
