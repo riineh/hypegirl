@@ -186,6 +186,15 @@ button:hover {
     margin-bottom: 100px;
 }
 
+a.pastIssues {
+    color: #FF1F62;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+}
+
 /*!*MOBILE CODE*!*/
 
 @media all and (max-width: 450px) {
